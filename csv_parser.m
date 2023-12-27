@@ -225,8 +225,8 @@ classdef csv_parser
             % Reference:
             % https://www.mathworks.com/help/signal/ug/create-uniform-and-nonuniform-time-vectors.html
             T = 1 / obj.ElectricFreq;
-            f_final = obj.Time(end);
-            t = 0 : T : f_final;
+            t_final = obj.Time(end);
+            t = 0 : T : t_final;
             obj.TimeVector = t
         end
     end

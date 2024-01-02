@@ -224,7 +224,7 @@ classdef csv_parser
 
             % Reference:
             % https://www.mathworks.com/help/signal/ug/create-uniform-and-nonuniform-time-vectors.html
-            E = ElectricFreq(ElectricFreq ~= 0)
+            ElectricFreq(ElectricFreq == 0) = 0.01 % Prevent zero division error
             T = 1 / obj.E;
             t_final = obj.Time(end);
             t = 0 : T : t_final;
